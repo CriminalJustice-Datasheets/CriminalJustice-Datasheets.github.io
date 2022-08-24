@@ -12,6 +12,7 @@
 \usepackage{lipsum}  
 \usepackage{xcolor}
 \usepackage{titlesec}
+\usepackage{tikz}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
@@ -24,11 +25,20 @@
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{naturalnames}{hyperref}
 
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+
 \titleformat{\subsection}
 {\color{blue}\normalfont\itshape}
 {\color{blue}\thesubsection}{1em}{}
 
-\newcommand{\subtitle}[1]{{\\ \small \normalfont \color{purple} #1}}
+\newif\ifsubtitles
+\subtitlestrue
+
+\newcommand{\subtitle}[1]{{
+    \ifsubtitles
+      \\ \small \normalfont \color{purple} #1%
+    \fi
+}}
 
 
 \graphicspath{ {images/} }
@@ -49,7 +59,7 @@ Collated Police Incident Index (CPII)\\{\color{blue}Datasheet}
 
 \subsection{For what purpose was the dataset created?}
 
-The dataset was created to assess the effect of New York’s bail reform on crime, and to ultimately determine: "did bail reform increase crime (as measured by the reconstructed index crime) in NYC, relative to shared co-movements in crime across the nation?" \cite{zhou2721empirical}. It is not a single dataset per-se, but a index of 27 datasets that can be relatively easily combined.
+The dataset was created to assess the effect of New York’s bail reform on crime, and to ultimately determine: "did bail reform increase crime (as measured by the reconstructed index crime) in NYC, relative to shared co-movements in crime across the nation?" \cite{zhou2021empirical}. It is not a single dataset per-se, but an index of 27 datasets with some common variables that can be combined or compared.
 
 \subsection{Who created the dataset? \subtitle{Is it an official law enforcement or government body? An academic research team? Other?}}
 
@@ -76,11 +86,51 @@ There are a total of 27 datasets in this index, each one has between 10K -- 1M i
 
 \subsection{Does the dataset contain all possible instances or is it a sample (not necessarily random) of instances from a larger set? \subtitle{For example, if it is traffic stops from a territory, is it all traffic stops conducted within that territory within a specific time? If not, is it a representative sample of all stops? Describe how representativeness was validated/verified. If it is not representative, please describe why.}}
 
-The compiled crime data represents 27 cities across the United States from the period Jan 1, 2018 - Mar 15, 2020. ``These cities were chosen based on population size and public crime data availability: we assessed the list of cities in decreasing order of population, and downloaded data when it was available for the 30 most populous cities, ending up with 27 cities with available crime reporting data after omitting some due to significant reporting discontinuities in the data'' \cite{zhou2721empirical}.
+The compiled crime data represents 27 cities across the United States from the period Jan 1, 2018 - Mar 15, 2020. ``These cities were chosen based on population size and public crime data availability: we assessed the list of cities in decreasing order of population, and downloaded data when it was available for the 30 most populous cities, ending up with 27 cities with available crime reporting data after omitting some due to significant reporting discontinuities in the data'' \cite{zhou2021empirical}.
 
 \subsection{What data does each instance consist of? \subtitle{If there is a large number of variables, please provide a broad description of what is included.}}
 
-As the data is compiled from 27 different sources, each source has a different set of variables. All sources report on the date, time, and location of the crime (as recorded) and the type of the offense.  
+As the data is compiled from 27 different sources, each source has a different set of variables. All sources report on the date, time, and location of the crime (as recorded) and the type of the offense. See Table \ref{tab:variable_matrix} for further detail.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+\begin{table*}[]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllllllllll}
+Area & Report ID & Date & Crime Type & Location & Domestic & Weapon & Victim Demographics & Suspect Demographics & Arrested & Hate Crime & Other \\
+Atlanta & \checkmark & \checkmark & \checkmark & \checkmark &  &  &  &  &  &  &  \\
+Austin & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark &  &  &  &  &  &  \\
+Baltimore & \checkmark & \checkmark & \checkmark & \checkmark &  & \checkmark &  & \checkmark & \checkmark &  &  \\
+Boston & \checkmark & \checkmark & \checkmark & \checkmark &  &  &  &  &  &  &  \\
+Buffalo & \checkmark & \checkmark & \checkmark & \checkmark &  &  &  &  &  &  &  \\
+Chicago & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark &  &  &  & \checkmark &  &  \\
+Cincinatti & \checkmark & \checkmark & \checkmark & \checkmark &  &  & \checkmark & \checkmark &  & \checkmark &  \\
+Dallas & \checkmark & \checkmark & \checkmark & \checkmark &  & \checkmark & \checkmark & \checkmark &  & \checkmark & \checkmark \\
+Denver & \checkmark & \checkmark & \checkmark & \checkmark &  &  &  &  &  &  &  \\
+Detroit & \checkmark & \checkmark & \checkmark & \checkmark &  &  &  &  &  &  &  \\
+Fort Worth & \checkmark & \checkmark & \checkmark & \checkmark &  &  &  &  &  &  &  \\
+Houston & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark &  \\
+Kansas City & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark &  & \checkmark &  &  &  \\
+Los Angeles & \checkmark & \checkmark & \checkmark & \checkmark &  & \checkmark & \checkmark &  &  &  &  \\
+Louisville & \checkmark & \checkmark & \checkmark & \checkmark &  &  &  &  &  &  &  \\
+Milwaukee & \checkmark & \checkmark & \checkmark & \checkmark &  & \checkmark &  &  &  &  &  \\
+Nashville & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark &  &  &  &  \\
+New York City & \checkmark & \checkmark & \checkmark & \checkmark &  &  &  &  &  &  &  \\
+Philadelphia & \checkmark & \checkmark & \checkmark & \checkmark &  &  &  &  &  &  &  \\
+Phoenix & \checkmark & \checkmark & \checkmark & \checkmark &  &  &  &  &  &  &  \\
+Portland & \checkmark & \checkmark & \checkmark & \checkmark &  &  &  &  &  &  &  \\
+Raleigh & \checkmark & \checkmark & \checkmark & \checkmark &  &  &  &  &  &  &  \\
+Sacramento & \checkmark & \checkmark & \checkmark & \checkmark &  &  &  &  &  &  &  \\
+San Francisco & \checkmark & \checkmark & \checkmark & \checkmark &  &  &  &  &  &  &  \\
+Seattle & \checkmark & \checkmark & \checkmark & \checkmark &  &  &  &  &  &  &  \\
+Virginia Beach & \checkmark & \checkmark & \checkmark & \checkmark &  &  &  &  &  &  &  \\
+Washington & \checkmark & \checkmark & \checkmark & \checkmark &  &  &  &  &  &  & 
+\end{tabular}%
+}
+\caption{A variable matrix of the datasets within the CPII repository.}
+\label{tab:variable_matrix}
+\end{table*}
 
 \subsection{Is there a target label or associated with each instance? \subtitle{Please include labels that are likely to be used as target labels, e.g. recidivism.}}
 
@@ -96,7 +146,7 @@ Some of the 27 datasets in this index include information on offender and victim
 
 \subsection{Are there any known errors, sources of noise, bias or missing data, or variables collected for only part of the datasets? \subtitle{If so, please provide a description.}}
 
-No. However, the data is not standardized and different agencies may employ different crime recording standards, and . 
+No. However, the data is not standardized, and different agencies may employ different crime recording standards. Note these are just initial reporting figures produced for the local areas, and may be updated at a later date.
 
 \subsection{Does the dataset contain data on criminal history or other data that might be considered confidential or sensitive in any way? \subtitle{For example: sexual orientations, religious beliefs, political opinions or union memberships, or locations; financial or health data; biometric or genetic data; forms of government identification, such as social security numbers; If so, please provide a description.}}
 
