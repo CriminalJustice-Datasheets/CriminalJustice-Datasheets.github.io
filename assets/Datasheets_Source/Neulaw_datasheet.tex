@@ -17,7 +17,14 @@
 {\color{blue}\normalfont\itshape}
 {\color{blue}\thesubsection}{1em}{}
 
-\newcommand{\subtitle}[1]{{\\ \small \normalfont \color{purple} #1}}
+\newif\ifsubtitles
+\subtitlestrue
+
+\newcommand{\subtitle}[1]{{
+    \ifsubtitles
+      \\ \small \normalfont \color{purple} #1%
+    \fi
+}}
 
 
 \graphicspath{ {images/} }
@@ -145,7 +152,14 @@ offender actually served \cite{ormachea2015new}.
 
 \subsection{Does the dataset contain data on criminal history or other data that might be considered confidential or sensitive in any way? \subtitle{For example: sexual orientations, religious beliefs, political opinions or union memberships, or locations; financial or health data; biometric or genetic data; forms of government identification, such as social security numbers; If so, please provide a description.}}
 
-The dataset contains partial information on criminal offending, as well as demographic information. 
+The dataset contains partial information on criminal offending, as well as demographic information. The partial criminal offending can be constructed as the dataset contains unique identification numbers that can be linked across multiple offenses in an area. For example, in Harris County, Texas, 44\% of the 1.2M uniquely identified offenders have multiple offenses -- and therefore a partial record of offense (see Figure \ref{fig:offense_dist}).
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Datasheets/neulaw_images/neulaw_uid.pdf}
+    \caption{A histogram of the number of offenses per offender in Harris County, Texas. The visualization has been limited to offenders that have less than 10 offenses for conciseness. Individuals with more than 10 offenses represent less than 3\% of the dataset.}
+    \label{fig:offense_dist}
+\end{figure}
 
 \subsection{Is it possible to identify individuals (i.e., one or more natural persons), either directly or indirectly (i.e., in combination with other data) from the dataset? \subtitle{If so, please describe how.}}
 
