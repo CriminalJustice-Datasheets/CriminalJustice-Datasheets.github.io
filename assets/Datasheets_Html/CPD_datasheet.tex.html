@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title> Personnel, Use of Force, and Complaints in the Chicago Police Department (CPD) Datasheet Reproduced from:</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title"> <strong>Personnel, Use of Force, and Complaints in the Chicago Police Department (CPD)<br />
+<span>Datasheet</span><br />
+<span>Reproduced from: <span class="citation" data-cites="horel2021the"></span></span></strong></h1>
+</header>
+<h1 id="motivation">Motivation</h1>
+<h2 id="for-what-purpose-was-the-dataset-created">For what purpose was the dataset created?</h2>
+<p>The original raw data files were sought by J. Kalven, a journalist in the City of Chicago, as part of his investigation into police abuse. After the original FOIA requests and legal case, the non-profit Invisible Institute (<a href="https://invisible.institute">https://invisible.institute</a>) began to collaborate with Kalven and the University of Chicago’s Mandel Legal Aid Clinic to follow up on earlier FOIA requests and to file new ones. The data disclosed in response to these earlier and now ongoing FOIA requests were made available online as part of the Citizens Police Data Project.</p>
+<h2 id="who-created-the-dataset-and-on-behalf-of-which-entity">Who created the dataset, and on behalf of which entity?</h2>
+<p>The Chicago Police Department (CPD), Civilian Office of Police Accountability (COPA), and the City of Chicago produced the raw data files in response to FOIA requests. The raw data were curated and released publicly by the Invisible Institute and its collaborators. The cleaned and linked data were produced as part of research by the authors of this document.</p>
+<h2 id="who-funded-the-creation-of-the-dataset">Who funded the creation of the dataset?</h2>
+<p>The acquisition of the original raw data was funded by the Invisible Institute.</p>
+<h1 id="composition">Composition</h1>
+<h2 id="what-do-the-instances-that-comprise-the-dataset-represent">What do the instances that comprise the dataset represent?</h2>
+<p>There are multiple types of instance in this data.</p>
+<ul>
+<li><p>Officer: information about an individual police officer</p></li>
+<li><p>Unit assignment: a single unit assignment for an officer</p></li>
+<li><p>Complaint: a complaint filed against a police officer, either internally or by a civilian</p></li>
+<li><p>Tactical Response Report: a form that an officer is required to fill out after their response requires use of force</p></li>
+<li><p>Award request: a request to grant an award to an officer</p></li>
+<li><p>Salary: a record of an officer’s salary, pay grade, and position across multiple years</p></li>
+</ul>
+<h2 id="how-many-instances-are-there-in-total-of-each-type">How many instances are there in total (of each type)?</h2>
+<p>There are roughly 35,000 unique officers in the cleaned roster appearing in roughly 130,000 profiles throughout the data, 730,000 award request records, 194,000 salary records, 108,000 unit assignment records, 109,000 complaints, and 10,500 tactical response reports.</p>
+<h2 id="does-the-dataset-contain-all-possible-instances-or-is-it-a-sample-of-instances-from-a-larger-set">Does the dataset contain all possible instances or is it a sample of instances from a larger set?</h2>
+<p>This data contains information regarding all sworn officers in the Chicago Police Department / City of Chicago databases for the stated date ranges (which differ for each source of raw data).</p>
+<h2 id="what-data-does-each-instance-consist-of">What data does each instance consist of?</h2>
+<ul>
+<li><p>Officer: officer unique ID, race, gender, age, appointment date, resignation date, badge number(s), position title(s)</p></li>
+<li><p>Unit assignment: officer unique ID, start date, end date, unit number</p></li>
+<li><p>Complaint: complaint ID, involved officer IDs, allegation, result of the investigation, resulting sanction (where available)</p></li>
+<li><p>Tactical Response Report: report ID, event location, date, and time, environmental conditions, who was notified, weapons discharged, weapon information, subject demographic information</p></li>
+<li><p>Award Request: awardee unique ID, requester, request date, award reference number, award type, request tracking number, incident dates, ceremony date</p></li>
+<li><p>Salary: officer unique ID, salary, position title, pay grade, year</p></li>
+</ul>
+<h2 id="is-there-a-label-or-target-associated-with-each-instance">Is there a label or target associated with each instance?</h2>
+<p>Not explicitly. However, labels could be constructed from the data that exists. For example, one could aggregate complaints to produce an integer “number of complaints” for each officer in the data, and use that as the response variable in a prediction task.</p>
+<h2 id="is-any-information-missing-from-individual-instances">Is any information missing from individual instances?</h2>
+<p>In the original raw data files, missing data (of all fields) is quite common (see Appendix D in <span class="citation" data-cites="horel2021the"></span>). In the cleaned and linked data files, we are able to aggregate multiple profiles of a single officer appearing throughout the data to “fill in the gaps,” although this process is not perfect and there are still missing entries.</p>
+<h2 id="are-relationships-between-individual-instances-made-explicit">Are relationships between individual instances made explicit?</h2>
+<p>In the raw data, no. In the cleaned data, we provide a unique officer identification that enables linking the activities and records regarding individual officers across datasets. There is no relational data (i.e., network edges) explicitly contained in the data. However, it is possible to use the data to construct a network, e.g., by linking officers co-listed on complaints.</p>
+<h2 id="are-there-recommended-data-splits">Are there recommended data splits?</h2>
+<p>No, although the officer database is likely to be incomplete prior to roughly 1980.</p>
+<h2 id="are-there-any-errors-sources-of-noise-or-redundancies-in-the-dataset">Are there any errors, sources of noise, or redundancies in the dataset?</h2>
+<p>There are redundancies in the raw data, but these are removed by our cleaning and linking procedure. Errors, inconsistencies, and missing data are also present in the raw data; our cleaning and linking resolves much of these issues. However, per Section 4 in <span class="citation" data-cites="horel2021the"></span>, the officer database is likely to be incomplete prior to roughly 1980 (as officers were added to the database only gradually over time).</p>
+<h2 id="is-the-dataset-self-contained-or-does-it-rely-on-external-resources">Is the dataset self-contained, or does it rely on external resources?</h2>
+<p>The dataset is self-contained: the raw data itself is stored in the <code>raw/</code> folder of the repository (with links to the external source files for reference), and the cleaned/linked data is produced by the source code in the repository.</p>
+<h2 id="does-the-dataset-contain-data-that-might-be-considered-confidential">Does the dataset contain data that might be considered confidential?</h2>
+<p>No; all of this data was publicly released as part of FOIA requests. Confidential data (e.g., relating to under cover officers) was withheld by the Chicago Police Department.</p>
+<h2 id="does-the-dataset-contain-data-that-if-viewed-directly-might-be-offensive-insulting-or-threatening">Does the dataset contain data that, if viewed directly, might be offensive, insulting, or threatening?</h2>
+<p>No.</p>
+<h2 id="does-the-dataset-relate-to-people">Does the dataset relate to people?</h2>
+<p>Yes; it contains records relating to police officers in the Chicago Police Department.</p>
+<h2 id="does-the-dataset-identify-any-subpopulations">Does the dataset identify any subpopulations?</h2>
+<p>Yes; officer records include race, gender, age, appointment date, unit history, badge numbers, position title, salary, awards, complaints, and tactical response reports. Subpopulations of officers can be constructed using these fields.</p>
+<h2 id="is-it-possible-to-identify-individuals">Is it possible to identify individuals?</h2>
+<p>Yes; detailed information is available that could be used to identify individual officers.</p>
+<h2 id="does-the-dataset-contain-data-that-might-be-considered-sensitive-in-any-way">Does the dataset contain data that might be considered sensitive in any way?</h2>
+<p>The data contains a coarse categorization of racial origins of officers.</p>
+<h1 id="collection-process">Collection Process</h1>
+<h2 id="how-was-the-data-associated-with-each-instance-acquired">How was the data associated with each instance acquired?</h2>
+<p>The raw data were obtained via FOIA requests to the City of Chicago and Chicago Police Department.</p>
+<h2 id="what-mechanisms-or-procedures-were-used-to-collect-the-data">What mechanisms or procedures were used to collect the data?</h2>
+<p>The raw data were obtained via FOIA requests to the City of Chicago and Chicago Police Department.</p>
+<h2 id="if-the-data-are-a-sample-from-a-larger-set-what-was-the-sampling-strategy">If the data are a sample from a larger set, what was the sampling strategy?</h2>
+<p>Not applicable.</p>
+<h2 id="who-was-involved-in-the-data-collection-process-and-how-were-they-compensated">Who was involved in the data collection process and how were they compensated?</h2>
+<p>Journalists in collaboration with the Invisible Institute were responsible for filing the FOIA requests, and officials within the Chicago Police Department and City of Chicago were responsible for providing data in response to those requests. It is not known explicitly whether or how either party was compensated.</p>
+<h2 id="over-what-timeframe-was-the-data-collected">Over what timeframe was the data collected?</h2>
+<p>The earliest releases per FOIA request occurred in 2016, and continue to occur as more FOIA requests are filed. The raw data itself pertain to records from the CPD dating back to the mid 20th century. The roster data covers the period up to 2018. The awards data pertains to records from 1967 to 2019. The salary data pertains to the years 2002 to 2017. The unit history data covers records up to 2016. The complaints data pertains to records from 1967 to 2016. The tactical response report data pertains to records from 2004 to 2017.</p>
+<h2 id="were-any-ethical-review-processes-conducted">Were any ethical review processes conducted?</h2>
+<p>It is unknown whether the CPD conducted any ethical review processes prior to the release of the raw data. No ethical review process was conducted prior to the activities involved in the present repository, i.e., cleaning the publicly available data.</p>
+<h2 id="does-the-dataset-relate-to-people-1">Does the dataset relate to people?</h2>
+<p>Yes; it contains detailed records regarding the activities of police officers in the City of Chicago.</p>
+<h2 id="did-you-collect-the-data-from-the-individuals-directly-or-obtain-it-via-third-parties">Did you collect the data from the individuals directly, or obtain it via third parties?</h2>
+<p>The raw data was acquired from public links provided by the Invisible Institute (<a href="https://invisible.institute">https://invisible.institute</a>). The Invisible Institute acquired the data through FOIA requests made to the CPD and the City of Chicago.</p>
+<h2 id="were-the-individuals-notified-about-the-data-collection">Were the individuals notified about the data collection?</h2>
+<p>It is unknown whether the individual officers were notified by the CPD when the raw data was released.</p>
+<h2 id="did-the-individuals-in-question-consent-to-the-collection-and-use-of-their-data">Did the individuals in question consent to the collection and use of their data?</h2>
+<p>Not explicitly. The Chicago Police Department was compelled by law to produce these records per FOIA requests.</p>
+<h2 id="if-consent-was-obtained-were-the-consenting-individuals-provided-with-a-mechanism-to-revoke-their-consent-in-the-future-or-for-certain-uses">If consent was obtained, were the consenting individuals provided with a mechanism to revoke their consent in the future or for certain uses?</h2>
+<p>Not applicable.</p>
+<h2 id="has-analysis-of-the-potential-impact-of-the-dataset-and-its-use-on-data-subjects-been-conducted">Has analysis of the potential impact of the dataset and its use on data subjects been conducted?</h2>
+<p>Not known.</p>
+<h1 id="preprocessing-and-cleaning">Preprocessing and cleaning</h1>
+<h2 id="was-any-preprocessing-of-the-data-done">Was any preprocessing of the data done?</h2>
+<p>Yes; the main section of this documentation provides details the cleaning and linking of the raw data resulting from FOIA requests made to the City of Chicago.</p>
+<h2 id="was-the-raw-data-saved-in-addition-to-the-cleaned-data">Was the “raw” data saved in addition to the cleaned data?</h2>
+<p>Yes; the raw data is available in the <code>raw/</code> folder in the repository.</p>
+<h2 id="is-the-software-used-to-clean-the-data-available">Is the software used to clean the data available?</h2>
+<p>Yes; the source for cleaning and linking is provided in the <code>src/</code> folder in the repository.</p>
+<h1 id="uses">Uses</h1>
+<h2 id="has-the-dataset-been-used-for-any-tasks-already">Has the dataset been used for any tasks already?</h2>
+<p>Not the newly cleaned and linked version. The raw data itself has been used previously; see e Section 5 in <span class="citation" data-cites="horel2021the"></span> for details.</p>
+<h2 id="is-there-a-repository-that-links-to-any-or-all-papers-that-use-the-dataset">Is there a repository that links to any or all papers that use the dataset?</h2>
+<p>Not that the authors of this work are aware of.</p>
+<h2 id="what-other-tasks-could-the-dataset-be-used-for">What (other) tasks could the dataset be used for?</h2>
+<p>This data set has a rich variety of possible uses; for example, network analysis (and in particular, analysis of dynamic events occurring on networks) and predictive regression/classification. See Section 5 in <span class="citation" data-cites="horel2021the"></span> for more details.</p>
+<h2 id="is-there-anything-about-the-composition-of-the-dataset-or-the-way-it-was-collected-and-cleaned-that-might-impact-future-uses">Is there anything about the composition of the dataset or the way it was collected and cleaned that might impact future uses?</h2>
+<p>Yes; the data are less reliable in earlier years (e.g., pre-1980). See Section 4 in <span class="citation" data-cites="horel2021the"></span> for more details.</p>
+<h2 id="are-there-tasks-for-which-the-dataset-should-not-be-used">Are there tasks for which the dataset should not be used?</h2>
+<p>This data should not be used to single out, study, or identify individual officers.</p>
+<h1 id="distribution">Distribution</h1>
+<h2 id="will-the-dataset-be-distributed-to-third-parties-outside-of-the-entity-on-behalf-of-which-the-dataset-was-created">Will the dataset be distributed to third parties outside of the entity on behalf of which the dataset was created?</h2>
+<p>Yes, the data is publicly available.</p>
+<h2 id="how-will-the-dataset-be-distributed">How will the dataset be distributed?</h2>
+<p>It is available on GitHub at <a href="https://github.com/chicago-police-violence/data">https://github.com/chicago-police-violence/data</a>. Release versions will be marked using the “release” feature on GitHub.</p>
+<h2 id="when-will-the-dataset-be-distributed">When will the dataset be distributed?</h2>
+<p>It is currently publicly accessible.</p>
+<h2 id="will-the-dataset-be-distributed-under-a-copyright-other-ip-license-or-terms-of-use">Will the dataset be distributed under a copyright, other IP license, or terms of use?</h2>
+<p>Yes; the source code is released under the MIT license, and the data output by the cleaning code is released under the Creative Commons 4.0 BY-NC-SA license.</p>
+<h2 id="have-any-third-parties-imposed-ip-based-or-other-restrictions-on-the-data-associated-with-the-instances">Have any third parties imposed IP-based or other restrictions on the data associated with the instances?</h2>
+<p>No.</p>
+<h2 id="do-any-export-controls-or-other-regulatory-restrictions-apply-to-the-data">Do any export controls or other regulatory restrictions apply to the data?</h2>
+<p>No.</p>
+<h1 id="maintenance">Maintenance</h1>
+<h2 id="who-is-supportinghostingmaintaining-the-dataset">Who is supporting/hosting/maintaining the dataset?</h2>
+<p>The repository will be hosted on GitHub. As of August 2021, the repository owners are Thibaut Horel, Trevor Campbell, and Lorenzo Masoero, but ownership may change over time.</p>
+<h2 id="how-can-the-data-ownercurator-be-contacted">How can the data owner/curator be contacted?</h2>
+<p>Issue threads on GitHub are the primary channel of contact for the repository maintainers.</p>
+<h2 id="is-there-an-erratum">Is there an erratum?</h2>
+<p>Not as of yet. For each major release version, notes will be included and hosted in the repository that will detail cleaning/linking errors that have been fixed.</p>
+<h2 id="will-the-dataset-be-updated">Will the dataset be updated?</h2>
+<p>The original raw source data from FOIA requests will not be modified. More raw data files may be added over time corresponding to new FOIA requests. The data cleaning and linking code will be edited over time to fix errors; release versions will be clearly marked on GitHub. There is no set schedule for updates.</p>
+<h2 id="if-the-dataset-relates-to-people-are-there-applicable-limits-on-the-retention-of-data-associated-with-the-instances">If the dataset relates to people, are there applicable limits on the retention of data associated with the instances?</h2>
+<p>No; this data was released per FOIA requests and is in the public domain.</p>
+<h2 id="will-older-versions-of-the-dataset-continue-to-be-supportedhostedmaintained">Will older versions of the dataset continue to be supported/hosted/maintained?</h2>
+<p>Yes; a full version-controlled history of the project exists on GitHub.</p>
+<h2 id="if-others-want-to-extendaugmentbuild-oncontribute-to-the-dataset-is-there-a-mechanism-for-them-to-do-so">If others want to extend/augment/build on/contribute to the dataset, is there a mechanism for them to do so?</h2>
+<p>Yes; the repository for the dataset is hosted on GitHub, where pull requests are a usual channel for external contribution.</p>
+</body>
+</html>

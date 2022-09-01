@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title> Survey of Prison Inmates (SPI) Datasheet</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title"> <strong>Survey of Prison Inmates (SPI)<br />
+<span>Datasheet</span></strong></h1>
+</header>
+<h1 id="motivation">Motivation</h1>
+<h2 id="for-what-purpose-was-the-dataset-created">For what purpose was the dataset created?</h2>
+<p>The SPI was created to produce national estimates for the state and sentenced federal prison populations. It aims to provide a record and means of tracking inmate characteristics, such as demographics, background, and criminal history <span class="citation" data-cites="glaze2019methodology"></span>.</p>
+<h2 id="who-created-the-dataset-is-it-an-official-law-enforcement-or-government-body-an-academic-research-team-other">Who created the dataset? <span><br />
+Is it an official law enforcement or government body? An academic research team? Other?</span></h2>
+<p>The dataset was created by the U.S. Bureau of Justice Statistics.</p>
+<h2 id="was-there-a-specific-task-in-mind-or-gap-that-needed-to-be-filled">Was there a specific task in mind, or gap that needed to be filled?</h2>
+<p>The dataset was created to be the first national periodic inmate survey in the United States, collecting detailed information pertinent to evolving issues within the criminal justice domain.</p>
+<h1 id="composition">Composition</h1>
+<h2 id="what-do-the-instances-that-comprise-the-dataset-represent-for-example-crimes-offenders-court-cases-police-officers">What do the instances that comprise the dataset represent? <span><br />
+For example: crimes, offenders, court cases, police officers</span></h2>
+<p>Each row corresponds to a survey response from a prison inmate.</p>
+<h2 id="are-there-multiple-types-of-instances-for-example-offenders-victims-and-the-relationship-between-them.">Are there multiple types of instances? <span><br />
+For example: offenders, victims, and the relationship between them.</span></h2>
+<p>No.</p>
+<h2 id="how-many-instances-are-there-in-total-of-each-type-if-appropriate.">How many instances are there in total? <span><br />
+Of each type, if appropriate.</span></h2>
+<p>There are a total of 24,848 inmates (20,064 state and 4,784 federal prisoners) in the 2016 SPI dataset.</p>
+<h2 id="does-the-dataset-contain-all-possible-instances-or-is-it-a-sample-not-necessarily-random-of-instances-from-a-larger-set-for-example-if-it-is-traffic-stops-from-a-territory-is-it-all-traffic-stops-conducted-within-that-territory-within-a-specific-time-if-not-is-it-a-representative-sample-of-all-stops-describe-how-representativeness-was-validatedverified.-if-it-is-not-representative-please-describe-why.">Does the dataset contain all possible instances or is it a sample (not necessarily random) of instances from a larger set? <span><br />
+For example, if it is traffic stops from a territory, is it all traffic stops conducted within that territory within a specific time? If not, is it a representative sample of all stops? Describe how representativeness was validated/verified. If it is not representative, please describe why.</span></h2>
+<p>The dataset is a representative sample of the (over 18) U.S. prison population. Achieved by using a two-stage sample design, where state and federal prisons are selected in the first stage, followed by individuals selected from these facilities in the second stage. Samples are then weighted to account for non-response. Further details can be found in the SIP methodology white paper <span class="citation" data-cites="glaze2019methodology"></span>.</p>
+<h2 id="what-data-does-each-instance-consist-of-if-there-is-a-large-number-of-variables-please-provide-a-broad-description-of-what-is-included.">What data does each instance consist of? <span><br />
+If there is a large number of variables, please provide a broad description of what is included.</span></h2>
+<p>Each instance broadly consists of:</p>
+<ul>
+<li><p>Current offense and sentence.</p></li>
+<li><p>Incident characteristics.</p></li>
+<li><p>Firearm possession and sources.</p></li>
+<li><p>Criminal history.</p></li>
+<li><p>Demographic and socioeconomic characteristics.</p></li>
+<li><p>Family background.</p></li>
+<li><p>Drug and alcohol use and treatment.</p></li>
+<li><p>Mental and physical health and treatment.</p></li>
+<li><p>Facility programs and rules violations.</p></li>
+</ul>
+<h2 id="is-there-a-target-label-or-associated-with-each-instance-please-include-labels-that-are-likely-to-be-used-as-target-labels-e.g.-recidivism.">Is there a target label or associated with each instance? <span><br />
+Please include labels that are likely to be used as target labels, e.g. recidivism.</span></h2>
+<p>No.</p>
+<h2 id="are-there-recommended-data-splits-e.g.-training-developmentvalidation-testing-if-so-please-provide-a-description-of-these-splits-explaining-the-rationale-behind-them.">Are there recommended data splits (e.g., training, development/validation, testing)? <span><br />
+If so, please provide a description of these splits, explaining the rationale behind them.</span></h2>
+<h2 id="does-the-dataset-contain-data-on-race-and-ethnicity-if-so-is-it-based-on-the-individuals-self-description-or-based-on-officers-impression-was-it-collected-or-derived-in-post-processing-for-example-by-name-analysis.">Does the dataset contain data on race and ethnicity? <span><br />
+If so, is it based on the individual’s self-description, or based on officer’s impression? Was it collected or derived in post-processing? For example, by name analysis.</span></h2>
+<p>No.</p>
+<h2 id="are-there-any-known-errors-sources-of-noise-bias-or-missing-data-or-variables-collected-for-only-part-of-the-datasets-if-so-please-provide-a-description.">Are there any known errors, sources of noise, bias or missing data, or variables collected for only part of the datasets? <span><br />
+If so, please provide a description.</span></h2>
+<p>There are two known potential sources of error/noise: nonresponse (where the demographics of the respondents is significantly different to the non-respondents), and a coverage bias (where the sample population did not represent the target population). Non-response and post-stratification weights are provided to compensate for these.</p>
+<h2 id="does-the-dataset-contain-data-on-criminal-history-or-other-data-that-might-be-considered-confidential-or-sensitive-in-any-way-for-example-sexual-orientations-religious-beliefs-political-opinions-or-union-memberships-or-locations-financial-or-health-data-biometric-or-genetic-data-forms-of-government-identification-such-as-social-security-numbers-if-so-please-provide-a-description.">Does the dataset contain data on criminal history or other data that might be considered confidential or sensitive in any way? <span><br />
+For example: sexual orientations, religious beliefs, political opinions or union memberships, or locations; financial or health data; biometric or genetic data; forms of government identification, such as social security numbers; If so, please provide a description.</span></h2>
+<p>Yes, the dataset contains information on criminal history, sentencing, demographic and socioeconomic characteristics, family background, drug and alcohol use and treatment, and mental and physical health and treatment.</p>
+<h2 id="is-it-possible-to-identify-individuals-i.e.-one-or-more-natural-persons-either-directly-or-indirectly-i.e.-in-combination-with-other-data-from-the-dataset-if-so-please-describe-how.">Is it possible to identify individuals (i.e., one or more natural persons), either directly or indirectly (i.e., in combination with other data) from the dataset? <span><br />
+If so, please describe how.</span></h2>
+<p>Indirectly, by a comparing criminal history, demographic information, and sentencing information with other sources that are not de-identified.</p>
+<h1 id="uses">Uses</h1>
+<h2 id="what-type-of-tasks-if-any-has-the-dataset-been-used-for-if-so-please-provide-examples-and-include-citations.">What type of tasks, if any, has the dataset been used for? <span><br />
+If so, please provide examples and include citations.</span></h2>
+<p>The dataset has been used to:</p>
+<ul>
+<li><p>Investigate the demographics and characteristics of inmates <span class="citation" data-cites="peterson1981commits"></span>.</p></li>
+<li><p>Investigate specific inmate populations, including women, parents, and minorities <span class="citation" data-cites="snell1994women maruschak2021parents"></span>.</p></li>
+<li><p>Investigate the link between rural prisons and incarceration levels <span class="citation" data-cites="porter2017correctional"></span>.</p></li>
+<li><p>Investigate the use and sources of firearms used in crimes <span class="citation" data-cites="alper2019source"></span>.</p></li>
+</ul>
+<h2 id="is-there-a-repository-that-links-to-any-or-all-papers-or-systems-that-use-the-dataset-if-so-please-provide-a-link-or-other-access-point.">Is there a repository that links to any or all papers or systems that use the dataset? <span><br />
+If so, please provide a link or other access point. </span></h2>
+<p>Yes. Please see here:<br />
+<a href="https://www.icpsr.umich.edu/web/NACJD/studies/37692">https://www.icpsr.umich.edu/web/NACJD/studies/37692</a></p>
+<h2 id="what-other-tasks-could-the-dataset-be-used-for-for-example-testing-predictive-policing-systems-predicting-recidivism.">What (other) tasks could the dataset be used for? <span><br />
+For example: testing predictive policing systems, predicting recidivism.</span></h2>
+<p>The dataset could be used to research counterfactual sentencing.</p>
+<h2 id="is-there-anything-about-the-composition-of-the-dataset-or-the-way-it-was-collected-and-preprocessedcleanedlabeled-that-might-impact-future-uses-for-example-is-there-anything-that-a-dataset-consumer-might-need-to-know-to-avoid-uses-that-could-result-in-unfair-treatment-of-individuals-or-groups-e.g.-stereotyping-quality-of-service-issues-or-other-risks-or-harms-e.g.-legal-risks-financial-harms-if-so-please-provide-a-description.-is-there-anything-a-dataset-consumer-could-do-to-mitigate-these-risks-or-harms">Is there anything about the composition of the dataset or the way it was collected and preprocessed/cleaned/labeled that might impact future uses? <span><br />
+For example, is there anything that a dataset consumer might need to know to avoid uses that could result in unfair treatment of individuals or groups (e.g., stereotyping, quality of service issues) or other risks or harms (e.g., legal risks, financial harms)? If so, please provide a description. Is there anything a dataset consumer could do to mitigate these risks or harms?</span></h2>
+<p>No.</p>
+<h1 id="collection-process">Collection Process</h1>
+<h2 id="how-was-the-data-associated-with-each-instance-acquired-e.g.-the-data-collected-survey-the-raw-data-is-routinely-collected-by-the-courts.">How was the data associated with each instance acquired? <span><br />
+e.g. the data collected survey, the raw data is routinely collected by the courts.</span></h2>
+<p>The data was acquired via interview, as well as being linked to records maintained by other government agencies, such as criminal records.</p>
+<h2 id="was-the-information-self-reported-if-the-data-was-self-reported-was-the-data-validatedverified-if-so-please-describe-how.">Was the information self-reported? <span><br />
+If the data was self-reported, was the data validated/verified? If so, please describe how.</span></h2>
+<p>Survey responses are self-reported. Data from official record are not.</p>
+<h2 id="who-was-involved-in-the-data-collection-process-was-this-done-as-part-of-their-other-duties-if-not-were-they-compensated">Who was involved in the data collection process? <span><br />
+Was this done as part of their other duties? If not, were they compensated?</span></h2>
+<p>The data was collected by employees of the Bureau of Justice Statistics.</p>
+<h2 id="over-what-timeframe-was-the-data-collected-does-this-timeframe-match-the-creation-timeframe-of-the-data-associated-with-the-instances-e.g.-recent-crawl-of-old-news-articles-if-not-please-describe-the-timeframe-in-which-the-data-associated-with-the-instances-was-created.-if-the-collection-was-not-continuous-within-the-timeframe-please-specify-the-intervals-for-example-annually-every-4-years-irregularly.">Over what timeframe was the data collected? Does this timeframe match the creation timeframe of the data associated with the instances (e.g., recent crawl of old news articles)? <span><br />
+If not, please describe the timeframe in which the data associated with the instances was created. If the collection was not continuous within the timeframe, please specify the intervals, for example, annually, every 4 years, irregularly.</span></h2>
+<p>SPI has released new data irregularly between 1974 – 2016. The latest release is from 2016.</p>
+<h2 id="were-any-ethical-review-processes-conducted-e.g.-by-an-institutional-review-board-if-so-please-provide-a-description-of-these-review-processes-including-the-outcomes-as-well-as-a-link-or-other-access-point-to-any-supporting-documentation.">Were any ethical review processes conducted (e.g., by an institutional review board)? <span><br />
+If so, please provide a description of these review processes, including the outcomes, as well as a link or other access point to any supporting documentation.</span></h2>
+<p>Unknown.</p>
+<h2 id="were-the-individuals-in-question-notified-about-the-data-collection-did-they-give-their-consent-if-consent-was-obtained-were-the-consenting-individuals-provided-with-a-mechanism-to-revoke-their-consent-in-the-future-or-for-certain-uses">Were the individuals in question notified about the data collection? Did they give their consent? <span><br />
+If consent was obtained, were the consenting individuals provided with a mechanism to revoke their consent in the future or for certain uses?</span></h2>
+<p>The individuals were notified: "before the interview prisoners were informed verbally and in writing that their participation was voluntary and that all information provided would be held in confidence" <span class="citation" data-cites="glaze2019methodology"></span>.</p>
+<h2 id="has-an-analysis-of-the-potential-impact-of-the-dataset-and-its-use-on-data-subjects-e.g.-a-data-protection-impact-analysis-been-conducted-if-so-please-provide-a-description-of-this-analysis-including-the-outcomes-as-well-as-a-link-or-other-access-point-to-any-supporting-documentation.">Has an analysis of the potential impact of the dataset and its use on data subjects (e.g., a data protection impact analysis) been conducted? <span><br />
+If so, please provide a description of this analysis, including the outcomes, as well as a link or other access point to any supporting documentation.</span></h2>
+<p>Unknown.</p>
+<h1 id="pre-processing-cleaning-labeling">Pre-processing, cleaning, labeling</h1>
+<h2 id="was-any-preprocessingcleaninglabeling-of-the-data-done-e.g.-discretization-or-bucketing-removal-of-instances-processing-of-missing-values-if-so-please-provide-a-description-and-reference-to-the-documentation.-if-not-you-may-skip-the-remaining-questions-in-this-section.">Was any preprocessing/cleaning/labeling of the data done (e.g., discretization or bucketing, removal of instances, processing of missing values)? <span><br />
+If so, please provide a description and reference to the documentation. If not, you may skip the remaining questions in this section.</span></h2>
+<p>The only processing specified in the methodology is the non-response and coverage weighting <span class="citation" data-cites="glaze2019methodology"></span>.</p>
+<h2 id="was-the-raw-data-saved-in-addition-to-the-preprocessedcleanedlabeled-data-if-so-please-provide-a-link-or-other-access-point-to-the-raw-data.">Was the “raw” data saved in addition to the preprocessed/cleaned/labeled data? <span><br />
+If so, please provide a link or other access point to the “raw” data. </span></h2>
+<p>As the weighting is provided as a separate variable, the raw data is still accessible.</p>
+<h2 id="is-the-software-that-was-used-to-preprocesscleanlabel-the-data-available-if-so-please-provide-a-link-or-other-access-point.">Is the software that was used to preprocess/clean/label the data available? <span><br />
+If so, please provide a link or other access point.</span></h2>
+<p>N/A.</p>
+<h1 id="distribution">Distribution</h1>
+<h2 id="is-the-data-publicly-available-how-and-where-can-it-be-accessed-e.g.-website-github-does-the-dataset-have-a-digital-object-identifier-doi">Is the data publicly available? How and where can it be accessed (e.g., website, GitHub)? <span><br />
+Does the dataset have a digital object identifier (DOI)?</span></h2>
+<p>Yes. The data can be obtained from:<br />
+<a href="https://www.icpsr.umich.edu/web/NACJD/studies/37692">https://www.icpsr.umich.edu/web/NACJD/studies/37692</a></p>
+<h2 id="is-the-dataset-be-distributed-under-a-copyright-or-other-intellectual-property-ip-license-andor-under-applicable-terms-of-use-tou-if-so-please-describe-this-license-andor-tou-and-provide-a-link-or-other-access-point-to-or-otherwise-reproduce-any-relevant-licensing-terms-or-tou-as-well-as-any-fees-associated-with-these-restrictions.">Is the dataset be distributed under a copyright or other intellectual property (IP) license, and/or under applicable terms of use (ToU)? <span><br />
+If so, please describe this license and/or ToU, and provide a link or other access point to, or otherwise reproduce, any relevant licensing terms or ToU, as well as any fees associated with these restrictions.</span></h2>
+<p>The license is not specified, but a citation and deposit requirement are listed:</p>
+<p><strong>Citation Requirement:</strong> Publications based on ICPSR data collections should acknowledge those sources by means of bibliographic citations. To ensure that such source attributions are captured for social science bibliographic utilities, citations must appear in footnotes or in the reference section of publications.<br />
+<strong>Deposit Requirement:</strong> To provide funding agencies with essential information about use of archival resources and to facilitate the exchange of information about ICPSR participants’ research activities, users of ICPSR data are requested to send to ICPSR bibliographic citations for each completed manuscript or thesis abstract. Visit the ICPSR Web site for more information on submitting citations.</p>
+<h1 id="maintenance">Maintenance</h1>
+<h2 id="is-the-dataset-maintained-who-is-supportinghostingmaintaining-the-dataset">Is the dataset maintained? Who is supporting/hosting/maintaining the dataset?</h2>
+<p>Yes, by the Bureau of Justice Statistics.</p>
+<h2 id="how-can-the-ownercuratormanager-of-the-dataset-be-contacted-e.g.-email-address">How can the owner/curator/manager of the dataset be contacted (e.g., email address)?</h2>
+<p>The Bureau of Justice Statistics can be contacted at: askbjs@usdoj.gov</p>
+<h2 id="will-the-dataset-be-updated-e.g.-to-correct-labeling-errors-add-new-instances-delete-instances">Will the dataset be updated (e.g., to correct labeling errors, add new instances, delete instances)?</h2>
+<p>No.</p>
+<h2 id="are-older-versions-of-the-dataset-continue-to-be-supportedhostedmaintained">Are older versions of the dataset continue to be supported/hosted/maintained?</h2>
+<p>Yes.</p>
+<h2 id="if-others-want-to-extendaugmentbuild-oncontribute-to-the-dataset-is-there-a-mechanism-for-them-to-do-so-if-so-please-provide-a-description.">If others want to extend/augment/build on/contribute to the dataset, is there a mechanism for them to do so? <span><br />
+If so, please provide a description.</span></h2>
+<p>No.</p>
+</body>
+</html>

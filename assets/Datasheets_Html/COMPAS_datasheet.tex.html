@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Correctional Offender Management Profiling for Alternative Sanctions (COMPAS) Datasheet</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title"><strong>Correctional Offender Management Profiling for Alternative Sanctions (COMPAS)<br />
+<span>Datasheet</span></strong></h1>
+</header>
+<h1 id="motivation">Motivation</h1>
+<h2 id="for-what-purpose-was-the-dataset-created">For what purpose was the dataset created?</h2>
+<p><em>The Correctional Offender Management Profiling for Alternative Sanctions (COMPAS)</em> is a predictive tool used by judges and parole officers. The tool produces an automated risk score to predict the probability of re-offending within a specific time frame. In 2016, ProPublica released a study <span class="citation" data-cites="angwin2016machine"></span> and an accompanying dataset obtained from Broward County, Florida. The aim of the study was to investigate whether there was any racial bias in the COMPAS tool.</p>
+<h2 id="who-created-the-dataset-is-it-an-official-law-enforcement-or-government-body-an-academic-research-team-other">Who created the dataset? <span><br />
+Is it an official law enforcement or government body? An academic research team? Other?</span></h2>
+<p>This dataset was produced by Jeff Larson, Surya Mattu, Lauren Kirchner and Julia Angwin for ProPublica.</p>
+<h2 id="was-there-a-specific-task-in-mind-or-gap-that-needed-to-be-filled">Was there a specific task in mind, or gap that needed to be filled?</h2>
+<p>Previous studies have investigated the efficacy of U.S. risk assessment algorithms, including COMPAS <span class="citation" data-cites="brennan2009evaluating"></span>. However, there were no recent datasets published containing COMPAS scores and associated re-offending data.</p>
+<h1 id="composition">Composition</h1>
+<h2 id="what-do-the-instances-that-comprise-the-dataset-represent-for-example-crimes-offenders-court-cases-police-officers">What do the instances that comprise the dataset represent? <span><br />
+For example: crimes, offenders, court cases, police officers</span></h2>
+<p>Each instance of the COMPAS dataset corresponds to an individual that has been assessed by the COMPAS system.</p>
+<h2 id="are-there-multiple-types-of-instances-for-example-offenders-victims-and-the-relationship-between-them.">Are there multiple types of instances? <span><br />
+For example: offenders, victims, and the relationship between them.</span></h2>
+<p>No.</p>
+<h2 id="how-many-instances-are-there-in-total-of-each-type-if-appropriate.">How many instances are there in total? <span><br />
+Of each type, if appropriate.</span></h2>
+<p>The dataset contains 11,757 individuals who were assigned a risk score by the COMPAS tool during pre-trial.</p>
+<h2 id="does-the-dataset-contain-all-possible-instances-or-is-it-a-sample-not-necessarily-random-of-instances-from-a-larger-set-for-example-if-it-is-traffic-stops-from-a-territory-is-it-all-traffic-stops-conducted-within-that-territory-within-a-specific-time-if-not-is-it-a-representative-sample-of-all-stops-describe-how-representativeness-was-validatedverified.-if-it-is-not-representative-please-describe-why.">Does the dataset contain all possible instances or is it a sample (not necessarily random) of instances from a larger set? <span><br />
+For example, if it is traffic stops from a territory, is it all traffic stops conducted within that territory within a specific time? If not, is it a representative sample of all stops? Describe how representativeness was validated/verified. If it is not representative, please describe why.</span></h2>
+<p>The dataset contains all individuals who were screened by the COMPAS tool in Broward County between 2013 – 2014.</p>
+<h2 id="what-data-does-each-instance-consist-of-if-there-is-a-large-number-of-variables-please-provide-a-broad-description-of-what-is-included.">What data does each instance consist of? <span><br />
+If there is a large number of variables, please provide a broad description of what is included.</span></h2>
+<p>Each instance consists of the following variables:</p>
+<ul>
+<li><p>Offender age</p></li>
+<li><p>Offender age at first offense</p></li>
+<li><p>Race of offender</p></li>
+<li><p>Gender of offender</p></li>
+<li><p>Jail history</p></li>
+<li><p>Prison history</p></li>
+<li><p>Charge history, including charge type, charge degree, etc.</p></li>
+<li><p>COMPAS score</p></li>
+<li><p>Recidivist</p></li>
+</ul>
+<h2 id="is-there-a-target-label-or-associated-with-each-instance-please-include-labels-that-are-likely-to-be-used-as-target-labels-e.g.-recidivism.">Is there a target label or associated with each instance? <span><br />
+Please include labels that are likely to be used as target labels, e.g. recidivism.</span></h2>
+<p>There are two target labels: ‘COMPAS score’ and ‘recidivist’. COMPAS score can also further be grouped into Low, Medium, and High. Scores 1 to 4 were labeled by COMPAS as “Low”; 5 to 7 were labeled “Medium”; and 8 to 10 were labeled “High.”</p>
+<h2 id="are-there-recommended-data-splits-e.g.-training-developmentvalidation-testing-if-so-please-provide-a-description-of-these-splits-explaining-the-rationale-behind-them.">Are there recommended data splits (e.g., training, development/validation, testing)? <span><br />
+If so, please provide a description of these splits, explaining the rationale behind them.</span></h2>
+<p>No.</p>
+<h2 id="does-the-dataset-contain-data-on-race-and-ethnicity-if-so-is-it-based-on-the-individuals-self-description-or-based-on-officers-impression-was-it-collected-or-derived-in-post-processing-for-example-by-name-analysis.">Does the dataset contain data on race and ethnicity? <span><br />
+If so, is it based on the individual’s self-description, or based on officer’s impression? Was it collected or derived in post-processing? For example, by name analysis.</span></h2>
+<p>Information on race is included. It is unclear if it is based on self-description or not.</p>
+<h2 id="are-there-any-known-errors-sources-of-noise-bias-or-missing-data-or-variables-collected-for-only-part-of-the-datasets-if-so-please-provide-a-description.">Are there any known errors, sources of noise, bias or missing data, or variables collected for only part of the datasets? <span><br />
+If so, please provide a description.</span></h2>
+<p>The dataset creator note that “We found that sometimes people’s names or dates of birth were incorrectly entered in some records".</p>
+<h2 id="does-the-dataset-contain-data-on-criminal-history-or-other-data-that-might-be-considered-confidential-or-sensitive-in-any-way-for-example-sexual-orientations-religious-beliefs-political-opinions-or-union-memberships-or-locations-financial-or-health-data-biometric-or-genetic-data-forms-of-government-identification-such-as-social-security-numbers-if-so-please-provide-a-description.">Does the dataset contain data on criminal history or other data that might be considered confidential or sensitive in any way? <span><br />
+For example: sexual orientations, religious beliefs, political opinions or union memberships, or locations; financial or health data; biometric or genetic data; forms of government identification, such as social security numbers; If so, please provide a description.</span></h2>
+<p>The dataset contains information criminal history, prison history, and jail history as well as demographic information.</p>
+<h2 id="is-it-possible-to-identify-individuals-i.e.-one-or-more-natural-persons-either-directly-or-indirectly-i.e.-in-combination-with-other-data-from-the-dataset-if-so-please-describe-how.">Is it possible to identify individuals (i.e., one or more natural persons), either directly or indirectly (i.e., in combination with other data) from the dataset? <span><br />
+If so, please describe how.</span></h2>
+<p>Yes, the individuals are named in the dataset.</p>
+<h1 id="uses">Uses</h1>
+<h2 id="what-type-of-tasks-if-any-has-the-dataset-been-used-for-if-so-please-provide-examples-and-include-citations.">What type of tasks, if any, has the dataset been used for? <span><br />
+If so, please provide examples and include citations.</span></h2>
+<p>The dataset has been used for:</p>
+<ul>
+<li><p>Investigating whether there are any racial biases in the COMPAS algorithm <span class="citation" data-cites="Rudin2020Age hamilton2019biased"></span>.</p></li>
+<li><p>Evaluating the performance of "fair" algorithms, i.e. balancing predictive performance along with a defined fairness criteria <span class="citation" data-cites="wadsworth2018achieving"></span>.</p></li>
+</ul>
+<h2 id="is-there-a-repository-that-links-to-any-or-all-papers-or-systems-that-use-the-dataset-if-so-please-provide-a-link-or-other-access-point.">Is there a repository that links to any or all papers or systems that use the dataset? <span><br />
+If so, please provide a link or other access point. </span></h2>
+<p>There is no specific repository. General academic search engines, such as Google Scholar, can be used with search terms such as: "COMPAS risk assessment".</p>
+<h2 id="what-other-tasks-could-the-dataset-be-used-for-for-example-testing-predictive-policing-systems-predicting-recidivism.">What (other) tasks could the dataset be used for? <span><br />
+For example: testing predictive policing systems, predicting recidivism.</span></h2>
+<p>This dataset was created for a specific purpose, but was adopted by the algorithmic fairness community as a benchmark. This practice was has been criticized due to lack of domain context <span class="citation" data-cites="bao2021s"></span>.</p>
+<h2 id="is-there-anything-about-the-composition-of-the-dataset-or-the-way-it-was-collected-and-preprocessedcleanedlabeled-that-might-impact-future-uses-for-example-is-there-anything-that-a-dataset-consumer-might-need-to-know-to-avoid-uses-that-could-result-in-unfair-treatment-of-individuals-or-groups-e.g.-stereotyping-quality-of-service-issues-or-other-risks-or-harms-e.g.-legal-risks-financial-harms-if-so-please-provide-a-description.-is-there-anything-a-dataset-consumer-could-do-to-mitigate-these-risks-or-harms">Is there anything about the composition of the dataset or the way it was collected and preprocessed/cleaned/labeled that might impact future uses? <span><br />
+For example, is there anything that a dataset consumer might need to know to avoid uses that could result in unfair treatment of individuals or groups (e.g., stereotyping, quality of service issues) or other risks or harms (e.g., legal risks, financial harms)? If so, please provide a description. Is there anything a dataset consumer could do to mitigate these risks or harms?</span></h2>
+<p>There are a few important things to keep in mind when using this dataset:</p>
+<ul>
+<li><p><strong>Potential Incorrect Data Entry</strong>: The ProPublica authors note: "We found that sometimes people’s names or dates of birth were incorrectly entered in some records".</p></li>
+<li><p><strong>Conclusion the dataset contains racial bias is disputed</strong>: There are a number of critics of the paper which this dataset is from. Criticisms can be categorized into (1) not using the same set of variables Northpointe used to compute the COMPAS score, (2) incorrect modelling assumptions <span class="citation" data-cites="Rudin2020Age"></span>.</p></li>
+<li><p><strong>Only uses local charges</strong>: The dataset uses charges in the Broward County database, which only contains the local charges. If criminal history exists outside this, it is not captured. Additionally, if re-offending occurs outside the county, it will not be counted as recidivism.</p></li>
+<li><p><strong>Recidivism timer starts at screening</strong>: "we defined recidivism as a new arrest within two years" (of screening). If an offender is taken into custody, they will have less opportunity to re-offend, biasing the results.</p></li>
+</ul>
+<h1 id="collection-process">Collection Process</h1>
+<h2 id="how-was-the-data-associated-with-each-instance-acquired-e.g.-the-data-collected-survey-the-raw-data-is-routinely-collected-by-the-courts.">How was the data associated with each instance acquired? <span><br />
+e.g. the data collected survey, the raw data is routinely collected by the courts.</span></h2>
+<p>The dataset is linked from four data sources, matched on first and last name:</p>
+<ol>
+<li><p>A public records request of COMPAS scores from Broward County Sheriff’s Office in Florida.</p></li>
+<li><p>Charge history from the Broward County Clerk’s Office website.</p></li>
+<li><p>Jail records from the Broward County Sheriff’s Office.</p></li>
+<li><p>Public incarceration records from the Florida Department of Corrections website.</p></li>
+</ol>
+<h2 id="was-the-information-self-reported-if-the-data-was-self-reported-was-the-data-validatedverified-if-so-please-describe-how.">Was the information self-reported? <span><br />
+If the data was self-reported, was the data validated/verified? If so, please describe how.</span></h2>
+<p>The data is not self-reported.</p>
+<h2 id="who-was-involved-in-the-data-collection-process-was-this-done-as-part-of-their-other-duties-if-not-were-they-compensated">Who was involved in the data collection process? <span><br />
+Was this done as part of their other duties? If not, were they compensated?</span></h2>
+<p>All data was received from the Broward County Sheriff’s Office. The raw data was collected as part of routine law enforcement work.</p>
+<h2 id="over-what-timeframe-was-the-data-collected-does-this-timeframe-match-the-creation-timeframe-of-the-data-associated-with-the-instances-e.g.-recent-crawl-of-old-news-articles-if-not-please-describe-the-timeframe-in-which-the-data-associated-with-the-instances-was-created.-if-the-collection-was-not-continuous-within-the-timeframe-please-specify-the-intervals-for-example-annually-every-4-years-irregularly.">Over what timeframe was the data collected? Does this timeframe match the creation timeframe of the data associated with the instances (e.g., recent crawl of old news articles)? <span><br />
+If not, please describe the timeframe in which the data associated with the instances was created. If the collection was not continuous within the timeframe, please specify the intervals, for example, annually, every 4 years, irregularly.</span></h2>
+<p>The dataset was created in 2016 by ProPublica, and concerns the 2013–2014 time period.</p>
+<h2 id="were-any-ethical-review-processes-conducted-e.g.-by-an-institutional-review-board-if-so-please-provide-a-description-of-these-review-processes-including-the-outcomes-as-well-as-a-link-or-other-access-point-to-any-supporting-documentation.">Were any ethical review processes conducted (e.g., by an institutional review board)? <span><br />
+If so, please provide a description of these review processes, including the outcomes, as well as a link or other access point to any supporting documentation.</span></h2>
+<p>Unknown.</p>
+<h2 id="were-the-individuals-in-question-notified-about-the-data-collection-did-they-give-their-consent-if-consent-was-obtained-were-the-consenting-individuals-provided-with-a-mechanism-to-revoke-their-consent-in-the-future-or-for-certain-uses">Were the individuals in question notified about the data collection? Did they give their consent? <span><br />
+If consent was obtained, were the consenting individuals provided with a mechanism to revoke their consent in the future or for certain uses?</span></h2>
+<p>No.</p>
+<h2 id="has-an-analysis-of-the-potential-impact-of-the-dataset-and-its-use-on-data-subjects-e.g.-a-data-protection-impact-analysis-been-conducted-if-so-please-provide-a-description-of-this-analysis-including-the-outcomes-as-well-as-a-link-or-other-access-point-to-any-supporting-documentation.">Has an analysis of the potential impact of the dataset and its use on data subjects (e.g., a data protection impact analysis) been conducted? <span><br />
+If so, please provide a description of this analysis, including the outcomes, as well as a link or other access point to any supporting documentation.</span></h2>
+<p>Unknown.</p>
+<h1 id="pre-processing-cleaning-labeling">Pre-processing, cleaning, labeling</h1>
+<h2 id="was-any-preprocessingcleaninglabeling-of-the-data-done-e.g.-discretization-or-bucketing-removal-of-instances-processing-of-missing-values-if-so-please-provide-a-description-and-reference-to-the-documentation.-if-not-you-may-skip-the-remaining-questions-in-this-section.">Was any preprocessing/cleaning/labeling of the data done (e.g., discretization or bucketing, removal of instances, processing of missing values)? <span><br />
+If so, please provide a description and reference to the documentation. If not, you may skip the remaining questions in this section.</span></h2>
+<p>The dataset only offenders who were screened in pre-trial. This reduced the number of individuals from 18,610 to 11,757.</p>
+<h2 id="was-the-raw-data-saved-in-addition-to-the-preprocessedcleanedlabeled-data-if-so-please-provide-a-link-or-other-access-point-to-the-raw-data.">Was the “raw” data saved in addition to the preprocessed/cleaned/labeled data? <span><br />
+If so, please provide a link or other access point to the “raw” data. </span></h2>
+<p>Yes. This can be found here:<br />
+<a href="https://github.com/propublica/compas-analysis">https://github.com/propublica/compas-analysis</a></p>
+<h2 id="is-the-software-that-was-used-to-preprocesscleanlabel-the-data-available-if-so-please-provide-a-link-or-other-access-point.">Is the software that was used to preprocess/clean/label the data available? <span><br />
+If so, please provide a link or other access point.</span></h2>
+<p>Yes. This can be found here:<br />
+<a href="https://github.com/propublica/compas-analysis">https://github.com/propublica/compas-analysis</a></p>
+<h2 id="is-the-data-publicly-available-how-and-where-can-it-be-accessed-e.g.-website-github-does-the-dataset-have-a-digital-object-identifier-doi">Is the data publicly available? How and where can it be accessed (e.g., website, GitHub)? <span><br />
+Does the dataset have a digital object identifier (DOI)?</span></h2>
+<p>The dataset is available on GitHub:<br />
+<a href="https://github.com/propublica/compas-analysis">https://github.com/propublica/compas-analysis</a></p>
+<h2 id="when-will-the-dataset-be-distributed">When will the dataset be distributed?</h2>
+<p>The dataset has been available since 2016.</p>
+<h2 id="is-the-dataset-be-distributed-under-a-copyright-or-other-intellectual-property-ip-license-andor-under-applicable-terms-of-use-tou-if-so-please-describe-this-license-andor-tou-and-provide-a-link-or-other-access-point-to-or-otherwise-reproduce-any-relevant-licensing-terms-or-tou-as-well-as-any-fees-associated-with-these-restrictions.">Is the dataset be distributed under a copyright or other intellectual property (IP) license, and/or under applicable terms of use (ToU)? <span><br />
+If so, please describe this license and/or ToU, and provide a link or other access point to, or otherwise reproduce, any relevant licensing terms or ToU, as well as any fees associated with these restrictions.</span></h2>
+<p>A license is not specified.</p>
+<h1 id="maintenance">Maintenance</h1>
+<h2 id="is-the-dataset-maintained-who-is-supportinghostingmaintaining-the-dataset">Is the dataset maintained? Who is supporting/hosting/maintaining the dataset?</h2>
+<p>The dataset is no longer maintained.</p>
+<h2 id="how-can-the-ownercuratormanager-of-the-dataset-be-contacted-e.g.-email-address">How can the owner/curator/manager of the dataset be contacted (e.g., email address)?</h2>
+<p>ProPublica can be contacted at: hello@propublica.org</p>
+<h2 id="will-the-dataset-be-updated-e.g.-to-correct-labeling-errors-add-new-instances-delete-instances">Will the dataset be updated (e.g., to correct labeling errors, add new instances, delete instances)?</h2>
+<p>No, the dataset hasn’t been updated since 2017.</p>
+<h2 id="are-older-versions-of-the-dataset-continue-to-be-supportedhostedmaintained">Are older versions of the dataset continue to be supported/hosted/maintained?</h2>
+<p>The dataset is no longer updated. However, older versions of the dataset will continue to be accessible via GitHub if any updates occur.</p>
+<h2 id="if-others-want-to-extendaugmentbuild-oncontribute-to-the-dataset-is-there-a-mechanism-for-them-to-do-so-if-so-please-provide-a-description.">If others want to extend/augment/build on/contribute to the dataset, is there a mechanism for them to do so? <span><br />
+If so, please provide a description.</span></h2>
+<p>Yes, via a GitHub pull request, given the authors are still active.</p>
+<p>The owners can be contacted at: UCR-NIBRS@fbi.gov</p>
+</body>
+</html>

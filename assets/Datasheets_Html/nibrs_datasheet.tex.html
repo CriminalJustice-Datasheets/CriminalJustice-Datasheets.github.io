@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title> National Incident-based Reporting System (NIBRS) Datasheet</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title"> <strong>National Incident-based Reporting System (NIBRS)<br />
+<span>Datasheet</span></strong></h1>
+</header>
+<h1 id="motivation">Motivation</h1>
+<h2 id="for-what-purpose-was-the-dataset-created">For what purpose was the dataset created?</h2>
+<p>NIBRS was created to improve the overall quality of crime data collected by law enforcement. It aims to provide useful statistics to promote constructive discussion, measured planning, and informed policing. Giving context to specific crime problems such as drug/narcotics and sex offenses, as well as issues like animal cruelty, identity theft, and computer hacking. It intends to provide a nationwide view of crime based on the submission of crime information by law enforcement agencies throughout the country, offering law enforcement and the academic community more comprehensive data than ever before available for management, training, planning, and research <span class="citation" data-cites="federal2020national"></span>.</p>
+<h2 id="who-created-the-dataset-is-it-an-official-law-enforcement-or-government-body-an-academic-research-team-other">Who created the dataset? <span><br />
+Is it an official law enforcement or government body? An academic research team? Other?</span></h2>
+<p>NIBRS is collected and managed by the Federal Bureau of Investigation (FBI). Data is submitted by participating agencies.</p>
+<h2 id="was-there-a-specific-task-in-mind-or-gap-that-needed-to-be-filled">Was there a specific task in mind, or gap that needed to be filled?</h2>
+<p>NIBRS is an extensive dataset, collecting information on all <em>Group A</em> police <em>incidents</em> from across the United States. Including:</p>
+<ul>
+<li><p>Arson</p></li>
+<li><p>Assault Offenses</p></li>
+<li><p>Bribery</p></li>
+<li><p>Burglary</p></li>
+<li><p>Counterfeiting / Forgery</p></li>
+<li><p>Destruction of Property</p></li>
+<li><p>Embezzlement</p></li>
+<li><p>Fraud Offenses</p></li>
+<li><p>Gambling Offenses</p></li>
+<li><p>Homicide Offenses</p></li>
+<li><p>Human Trafficking</p></li>
+<li><p>Kidnapping / Abduction</p></li>
+<li><p>Larceny / Theft</p></li>
+<li><p>Prostitution Offenses</p></li>
+<li><p>Robbery</p></li>
+<li><p>Sex Offenses</p></li>
+<li><p>Weapon Law Violations</p></li>
+</ul>
+<p>As such, it’s potential uses are multi-faceted. It has not been created with a specific task in mind, but as a national centralized repository of police incident data.</p>
+<p>The FBI has been reporting aggregated crime statistics through the <em>uniform crime reporting (UCR) summary reporting system (SRS)</em> since 1930. NIBRS is aimed at improving on UCR by reporting detailed information on an incident level, allowing for more detailed analysis.</p>
+<h1 id="composition">Composition</h1>
+<h2 id="what-do-the-instances-that-comprise-the-dataset-represent-for-example-crimes-offenders-court-cases-police-officers">What do the instances that comprise the dataset represent? <span><br />
+For example: crimes, offenders, court cases, police officers</span></h2>
+<p>In NIBRS instances are recorded crime incidents. An incident is defined as a set of offenses committed by one or a group of individuals, at the same time and place.</p>
+<h2 id="are-there-multiple-types-of-instances-for-example-offenders-victims-and-the-relationship-between-them.">Are there multiple types of instances? <span><br />
+For example: offenders, victims, and the relationship between them.</span></h2>
+<p>Incidents are the ‘base’ unit of NIBRS. Each incident is linked to an agency and may be linked to one of more: offenses, offenders, victims, proprieties.</p>
+<h2 id="how-many-instances-are-there-in-total-of-each-type-if-appropriate.">How many instances are there in total? <span><br />
+Of each type, if appropriate.</span></h2>
+<p>In 2019, there were just under 7.7 million incidents recorded in NIBRS.</p>
+<h2 id="does-the-dataset-contain-all-possible-instances-or-is-it-a-sample-not-necessarily-random-of-instances-from-a-larger-set-for-example-if-it-is-traffic-stops-from-a-territory-is-it-all-traffic-stops-conducted-within-that-territory-within-a-specific-time-if-not-is-it-a-representative-sample-of-all-stops-describe-how-representativeness-was-validatedverified.-if-it-is-not-representative-please-describe-why.">Does the dataset contain all possible instances or is it a sample (not necessarily random) of instances from a larger set? <span><br />
+For example, if it is traffic stops from a territory, is it all traffic stops conducted within that territory within a specific time? If not, is it a representative sample of all stops? Describe how representativeness was validated/verified. If it is not representative, please describe why.</span></h2>
+<p>NIBRS contain all incidents recorded by <strong>participating</strong> agencies. Incidents recorded by non-participating agencies are not included. Additionally, this is <strong>not</strong> a record of <strong>all crime</strong>. Only a subset of crimes are every encountered by police, and a subset of those are recorded as incidents.</p>
+<p>NIBRS contains population coverage information, it can be determined how representative the incidents recorded are of the jurisdiction in which the agency operates.</p>
+<h2 id="what-data-does-each-instance-consist-of-if-there-is-a-large-number-of-variables-please-provide-a-broad-description-of-what-is-included.">What data does each instance consist of? <span><br />
+If there is a large number of variables, please provide a broad description of what is included.</span></h2>
+<p>Each instances contains the following information:</p>
+<ul>
+<li><p>Incident Information</p>
+<ul>
+<li><p>Incident Date</p></li>
+<li><p>Incident Hour</p></li>
+<li><p>Exceptional Clearance</p></li>
+<li><p>Exceptional Clearance Date</p></li>
+</ul></li>
+<li><p>Offense Information</p>
+<ul>
+<li><p>Offense Codes</p></li>
+<li><p>Attempted vs. Completed</p></li>
+<li><p>Offender Suspected Use (of alcohol, drugs, or computers)</p></li>
+<li><p>Location</p></li>
+<li><p>Type and Number of Premises Entered</p></li>
+<li><p>Type of Criminal Activity/Gang Information</p></li>
+<li><p>Weapon/Force Used</p></li>
+<li><p>Bias Motivation</p></li>
+</ul></li>
+<li><p>Property Information</p>
+<ul>
+<li><p>Loss Type</p></li>
+<li><p>Property Description</p></li>
+<li><p>Value of Property</p></li>
+<li><p>Date Recovered</p></li>
+<li><p>Number of Motor Vehicles Stolen/Recovered</p></li>
+<li><p>Drug Types and Amounts</p></li>
+</ul></li>
+<li><p>Victim Information</p>
+<ul>
+<li><p>Connection to Offenses</p></li>
+<li><p>Type of Victim</p></li>
+<li><p>Age/Sex/Race/Ethnicity/Resident Status of Victim</p></li>
+<li><p>Assault and Homicide Circumstances</p></li>
+<li><p>Injury Types</p></li>
+<li><p>Relationships to Offenders</p></li>
+</ul></li>
+<li><p>Offender Information</p>
+<ul>
+<li><p>Age</p></li>
+<li><p>Sex</p></li>
+<li><p>Race</p></li>
+<li><p>Ethnicity</p></li>
+</ul></li>
+<li><p>Arrestee Information</p>
+<ul>
+<li><p>Arrest Date</p></li>
+<li><p>Type of Arrest</p></li>
+<li><p>Arrest Offense Code</p></li>
+<li><p>Arrestee Weapons</p></li>
+<li><p>Age/Sex/Race/Ethnicity/Resident</p></li>
+</ul></li>
+<li><p>Status of Arrestee</p>
+<ul>
+<li><p>Disposition of Minor</p></li>
+<li><p>Group B Arrest Information</p></li>
+<li><p>Type of Arrest</p></li>
+<li><p>Arrestee Weapons</p></li>
+<li><p>Age/Sex/Race/Ethnicity/Resident</p></li>
+<li><p>Disposition of Minor</p></li>
+</ul></li>
+</ul>
+<h2 id="is-there-a-target-label-or-associated-with-each-instance-please-include-labels-that-are-likely-to-be-used-as-target-labels-e.g.-recidivism.">Is there a target label or associated with each instance? <span><br />
+Please include labels that are likely to be used as target labels, e.g. recidivism.</span></h2>
+<p>There is no set target label, though a few of interest may be: whether on not an arrest was made, the type of arrest, exceptional clearance.</p>
+<h2 id="are-there-recommended-data-splits-e.g.-training-developmentvalidation-testing-if-so-please-provide-a-description-of-these-splits-explaining-the-rationale-behind-them.">Are there recommended data splits (e.g., training, development/validation, testing)? <span><br />
+If so, please provide a description of these splits, explaining the rationale behind them.</span></h2>
+<p>There is not offical split. However, some points to consider:</p>
+<p>When splitting data into multiple sets, be aware that the data is a single database that has been compiled from many agencies. If one wishes to test a predictive model, it may be reasonable to split along agency lines, assessing performance on unseen agencies.</p>
+<p>If a temporal model is being used, to predict future offense numbers for example, the above is not applicable. Instead, it would make sense to have the same agencies across each split, with each split containing a different time segment.</p>
+<h2 id="does-the-dataset-contain-data-on-race-and-ethnicity-if-so-is-it-based-on-the-individuals-self-description-or-based-on-officers-impression-was-it-collected-or-derived-in-post-processing-for-example-by-name-analysis.">Does the dataset contain data on race and ethnicity? <span><br />
+If so, is it based on the individual’s self-description, or based on officer’s impression? Was it collected or derived in post-processing? For example, by name analysis.</span></h2>
+<p>Yes. Race and ethnicity are entered based on the officer’s impression, in principle. In practice, it may be that in some instances the individuals is asked about their race or ethnicity. These instances can not be distinguished. In addition, the ethnicity field is not used by all agencies.</p>
+<h2 id="are-there-any-known-errors-sources-of-noise-bias-or-missing-data-or-variables-collected-for-only-part-of-the-datasets-if-so-please-provide-a-description.">Are there any known errors, sources of noise, bias or missing data, or variables collected for only part of the datasets? <span><br />
+If so, please provide a description.</span></h2>
+<p>There are a number of fields which are officer estimates, and thus error prone: race, ethnicity, value of property, and drug amount.</p>
+<p>In addition, value of property, and drug amount seems to sometimes be filled standardized amounts (1, 10, etc.). The policy regarding filling in those variables may differ between agencies.</p>
+<h2 id="is-the-dataset-self-contained-or-does-it-link-to-or-otherwise-rely-on-external-resources-for-example-websites-tweets-other-datasets">Is the dataset self-contained, or does it link to or otherwise rely on external resources? <span><br />
+For example: websites, tweets, other datasets)</span></h2>
+<p>The data is self-contained.</p>
+<h2 id="does-the-dataset-contain-data-that-might-be-considered-confidential-for-example-data-that-is-protected-by-legal-privilege-or-by-doctorpatient-confidentiality-data-that-includes-the-content-of-individuals-nonpublic-communications.-if-so-please-provide-a-description.">Does the dataset contain data that might be considered confidential? <span><br />
+For example: data that is protected by legal privilege or by doctor–patient confidentiality, data that includes the content of individuals’ nonpublic communications. If so, please provide a description.</span></h2>
+<p>The data contains records of crimes, some of which are violent. However, descriptions are minimal. Demographic information is recorded on both offender and victim. Additionally, it identifies whether the offense committed was a hate crime against any marginilised group, including LGBTQ+.</p>
+<h2 id="is-it-possible-to-identify-individuals-i.e.-one-or-more-natural-persons-either-directly-or-indirectly-i.e.-in-combination-with-other-data-from-the-dataset-if-so-please-describe-how.">Is it possible to identify individuals (i.e., one or more natural persons), either directly or indirectly (i.e., in combination with other data) from the dataset? <span><br />
+If so, please describe how.</span></h2>
+<p>No.</p>
+<h1 id="uses">Uses</h1>
+<h2 id="has-the-dataset-been-used-for-any-tasks-already-if-so-please-provide-a-description.">Has the dataset been used for any tasks already? <span><br />
+If so, please provide a description.</span></h2>
+<p>The dataset has been used in many studies. Including, but not limited to:</p>
+<ul>
+<li><p>Investigating the effect of demographics on incidents / arrests <span class="citation" data-cites="chilton1999using chilton2007impact butcher2022racial"></span></p></li>
+<li><p>Investigating hate crimes <span class="citation" data-cites="strom2001hate shively2014understanding zhang2021hate"></span>.</p></li>
+<li><p>Investigating crimes on juviniles <span class="citation" data-cites="hamilton2019biased finkelhor2000kidnaping"></span>.</p></li>
+</ul>
+<p>among many others.</p>
+<h2 id="is-there-a-repository-that-links-to-any-or-all-papers-or-systems-that-use-the-dataset-if-so-please-provide-a-link-or-other-access-point.">Is there a repository that links to any or all papers or systems that use the dataset? <span><br />
+If so, please provide a link or other access point. </span></h2>
+<p>The Inter-university Consortium for Political and Social Research (ICPSR) provide a non-exhaustive repository of publications using NIBRS data at:<br />
+<a href="https://www.icpsr.umich.edu/web/ICPSR/series/128/publications">https://www.icpsr.umich.edu/web/ICPSR/series/128/publications</a></p>
+<h2 id="what-other-tasks-could-the-dataset-be-used-for">What (other) tasks could the dataset be used for?</h2>
+<p>This dataset can be used for investigating crime, where a significant amount of time, location and offense information is required. It is a highly flexible dataset that can answer many research questions when used correctly.</p>
+<h2 id="is-there-anything-about-the-composition-of-the-dataset-or-the-way-it-was-collected-and-preprocessedcleanedlabeled-that-might-impact-future-uses-for-example-is-there-anything-that-a-dataset-consumer-might-need-to-know-to-avoid-uses-that-could-result-in-unfair-treatment-of-individuals-or-groups-e.g.-stereotyping-quality-of-service-issues-or-other-risks-or-harms-e.g.-legal-risks-financial-harms-if-so-please-provide-a-description.-is-there-anything-a-dataset-consumer-could-do-to-mitigate-these-risks-or-harms">Is there anything about the composition of the dataset or the way it was collected and preprocessed/cleaned/labeled that might impact future uses? <span><br />
+For example, is there anything that a dataset consumer might need to know to avoid uses that could result in unfair treatment of individuals or groups (e.g., stereotyping, quality of service issues) or other risks or harms (e.g., legal risks, financial harms)? If so, please provide a description. Is there anything a dataset consumer could do to mitigate these risks or harms?</span></h2>
+<p>NIBRS is a collection of incident records, recorded and provided by thousands of police agencies. While NIBRS attempts to enforce standardisation, each agency will have it’s own idiosyncrasies in recording. Some agencies do not record ethnicity, or use different units for recording drug quantities, among other differences. It is important to control for these differences when performing analysis on NIBRS.</p>
+<p>Incidents that are related in real life cannot be connected within NIBRS. For example, a crime the occurred in the same time and place with two offenders who committed the same offense but one committed an additional offense will be recorded as separate incidents recording in NIBRS. There is no direct manner to connect these, so counting the same incident multiple times is possible if not careful. In addition, there are no unique identifiers for offenders or victims. Two offenses committed by the same offender at different times will not appear connected.</p>
+<h1 id="collection-process">Collection Process</h1>
+<h2 id="how-was-the-data-associated-with-each-instance-acquired-e.g.-the-data-collected-survey-the-raw-data-is-routinely-collected-by-the-courts.">How was the data associated with each instance acquired? <span><br />
+e.g. the data collected survey, the raw data is routinely collected by the courts.</span></h2>
+<p>Incident information is collected by and updated by each respective police agency using their own respective systems as the events occur. Once a year, incidents recorded by a participating agency are converted from their format to the NIBRS format, with help from the state UCR program. This data is them reported to NIBRS.</p>
+<h2 id="was-the-information-self-reported-if-the-data-was-self-reported-was-the-data-validatedverified-if-so-please-describe-how.">Was the information self-reported? <span><br />
+If the data was self-reported, was the data validated/verified? If so, please describe how.</span></h2>
+<p>No. The data is recorded by police officers. However, some crimes may be recorded via victim’s reporting.</p>
+<p>The data is quality controlled and validated twice, once by state UCR programs, and again on reception by the NIBRS program.</p>
+<h2 id="who-was-involved-in-the-data-collection-process-was-this-done-as-part-of-their-other-duties-if-not-were-they-compensated">Who was involved in the data collection process? <span><br />
+Was this done as part of their other duties? If not, were they compensated?</span></h2>
+<p>Local police agencies. Data is recorded as part of routine police work.</p>
+<h2 id="over-what-timeframe-was-the-data-collected-does-this-timeframe-match-the-creation-timeframe-of-the-data-associated-with-the-instances-e.g.-recent-crawl-of-old-news-articles-if-not-please-describe-the-timeframe-in-which-the-data-associated-with-the-instances-was-created.-if-the-collection-was-not-continuous-within-the-timeframe-please-specify-the-intervals-for-example-annually-every-4-years-irregularly.">Over what timeframe was the data collected? Does this timeframe match the creation timeframe of the data associated with the instances (e.g., recent crawl of old news articles)? <span><br />
+If not, please describe the timeframe in which the data associated with the instances was created. If the collection was not continuous within the timeframe, please specify the intervals, for example, annually, every 4 years, irregularly.</span></h2>
+<p>The data has been continuous collected since 1988. However, the level of agency participation has changed during the years. For some states, data is available from 1998 onwards.</p>
+<h2 id="were-any-ethical-review-processes-conducted-e.g.-by-an-institutional-review-board-if-so-please-provide-a-description-of-these-review-processes-including-the-outcomes-as-well-as-a-link-or-other-access-point-to-any-supporting-documentation.">Were any ethical review processes conducted (e.g., by an institutional review board)? <span><br />
+If so, please provide a description of these review processes, including the outcomes, as well as a link or other access point to any supporting documentation.</span></h2>
+<p>Unknown.</p>
+<h2 id="were-the-individuals-in-question-notified-about-the-data-collection-did-they-give-their-consent-if-consent-was-obtained-were-the-consenting-individuals-provided-with-a-mechanism-to-revoke-their-consent-in-the-future-or-for-certain-uses">Were the individuals in question notified about the data collection? Did they give their consent? <span><br />
+If consent was obtained, were the consenting individuals provided with a mechanism to revoke their consent in the future or for certain uses?</span></h2>
+<p>Individuals may have known data is recorded. However, consent was not granted as the Individuals do not have the option to opt out.</p>
+<h2 id="has-an-analysis-of-the-potential-impact-of-the-dataset-and-its-use-on-data-subjects-e.g.-a-data-protection-impact-analysis-been-conducted-if-so-please-provide-a-description-of-this-analysis-including-the-outcomes-as-well-as-a-link-or-other-access-point-to-any-supporting-documentation.">Has an analysis of the potential impact of the dataset and its use on data subjects (e.g., a data protection impact analysis) been conducted? <span><br />
+If so, please provide a description of this analysis, including the outcomes, as well as a link or other access point to any supporting documentation.</span></h2>
+<p>Unknown.</p>
+<h1 id="pre-processing-cleaning-labeling">Pre-processing, cleaning, labeling</h1>
+<h2 id="was-any-preprocessingcleaninglabeling-of-the-data-done-e.g.-discretization-or-bucketing-removal-of-instances-processing-of-missing-values-if-so-please-provide-a-description-and-reference-to-the-documentation.-if-not-you-may-skip-the-remaining-questions-in-this-section.">Was any preprocessing/cleaning/labeling of the data done (e.g., discretization or bucketing, removal of instances, processing of missing values)? <span><br />
+If so, please provide a description and reference to the documentation. If not, you may skip the remaining questions in this section.</span></h2>
+<h2 id="was-the-raw-data-saved-in-addition-to-the-preprocessedcleanedlabeled-data-if-so-please-provide-a-link-or-other-access-point-to-the-raw-data.">Was the “raw” data saved in addition to the preprocessed/cleaned/labeled data? <span><br />
+If so, please provide a link or other access point to the “raw” data. </span></h2>
+<p>Police agencies will have local records that make the raw data sent to the NIBRS program, but these cannot be accessed.</p>
+<h2 id="is-the-software-that-was-used-to-preprocesscleanlabel-the-data-available-if-so-please-provide-a-link-or-other-access-point.">Is the software that was used to preprocess/clean/label the data available? <span><br />
+If so, please provide a link or other access point.</span></h2>
+<p>No.</p>
+<h1 id="distribution">Distribution</h1>
+<h2 id="is-the-data-publicly-available-how-and-where-can-it-be-accessed-e.g.-website-github-does-the-dataset-have-a-digital-object-identifier-doi">Is the data publicly available? How and where can it be accessed (e.g., website, GitHub)? <span><br />
+Does the dataset have a digital object identifier (DOI)?</span></h2>
+<p>The dataset is avilable for download on the FBIs crime explorer website:<br />
+<a href="https://crime-data-explorer.fr.cloud.gov/pages/downloads">https://crime-data-explorer.fr.cloud.gov/pages/downloads</a></p>
+<h2 id="is-the-dataset-be-distributed-under-a-copyright-or-other-intellectual-property-ip-license-andor-under-applicable-terms-of-use-tou-if-so-please-describe-this-license-andor-tou-and-provide-a-link-or-other-access-point-to-or-otherwise-reproduce-any-relevant-licensing-terms-or-tou-as-well-as-any-fees-associated-with-these-restrictions.">Is the dataset be distributed under a copyright or other intellectual property (IP) license, and/or under applicable terms of use (ToU)? <span><br />
+If so, please describe this license and/or ToU, and provide a link or other access point to, or otherwise reproduce, any relevant licensing terms or ToU, as well as any fees associated with these restrictions.</span></h2>
+<p>The dataset is licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) License.</p>
+<h1 id="maintenance">Maintenance</h1>
+<h2 id="is-the-dataset-maintained-who-is-supportinghostingmaintaining-the-dataset">Is the dataset maintained? Who is supporting/hosting/maintaining the dataset?</h2>
+<p>The FBI.</p>
+<h2 id="how-can-the-ownercuratormanager-of-the-dataset-be-contacted-e.g.-email-address">How can the owner/curator/manager of the dataset be contacted (e.g., email address)?</h2>
+<p>The owners can be contacted at: UCR-NIBRS@fbi.gov</p>
+<h2 id="will-the-dataset-be-updated-e.g.-to-correct-labeling-errors-add-new-instances-delete-instances-if-so-please-describe-how-often-by-whom-and-how-updates-will-be-communicated-to-dataset-consumers-e.g.-mailing-list-github">Will the dataset be updated (e.g., to correct labeling errors, add new instances, delete instances)? If so, please describe how often, by whom, and how updates will be communicated to dataset consumers (e.g., mailing list, GitHub)?</h2>
+<p>The dataset is published annually. Occasionally UCR will publish blocks of years, e.g. 2000-2010.</p>
+<h2 id="will-the-dataset-be-updated-e.g.-to-correct-labeling-errors-add-new-instances-delete-instances">Will the dataset be updated (e.g., to correct labeling errors, add new instances, delete instances)?</h2>
+<p>New data is released annually.</p>
+<h2 id="are-older-versions-of-the-dataset-continue-to-be-supportedhostedmaintained">Are older versions of the dataset continue to be supported/hosted/maintained?</h2>
+<p>Yes. Data from previous years remains available for download from their website.</p>
+<h2 id="if-others-want-to-extendaugmentbuild-oncontribute-to-the-dataset-is-there-a-mechanism-for-them-to-do-so-if-so-please-provide-a-description.">If others want to extend/augment/build on/contribute to the dataset, is there a mechanism for them to do so? <span><br />
+If so, please provide a description.</span></h2>
+<p>No.</p>
+</body>
+</html>
