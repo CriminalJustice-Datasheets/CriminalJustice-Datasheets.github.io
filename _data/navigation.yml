@@ -1,9 +1,31 @@
 main:
-  - title: "Paper"
-    url: /
   - title: "Datasheets"
-    url: /
-  - title: "Index"
-    url: /index/
-  - title: "About"
-    url: /about/
+    url: /datasheets/
+  - title: "Paper"
+    url: /paper/
+#   - title: "Index"
+#     url: /index/
+#   - title: "CJ pipeline"
+#     url: /pipeline/
+  # - title: "Intended use"
+  #   url: /uses/
+  - title: "Contribute"
+    url: /contributions/
+
+side:
+  - title: "Datasheets"
+    url: /datasheets/
+  - title: "Information"
+    children:
+    - title: "Intended use"
+      url: /uses/
+    - title: "Contribute"
+      url: /contributions/
+  - title: "Resources"
+    children:
+    - title: "Paper"
+      url: /paper/
+    - title: "CJ pipeline"
+      url: /pipeline/
+    - title: "Dataset index"
+      url: /index/

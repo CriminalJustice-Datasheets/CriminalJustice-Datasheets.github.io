@@ -57,11 +57,7 @@ plugins:
 
 author:
   name: "Criminal Justice Datasheets"
-  bio: "A collection of criminal justice datasheets. Follow the github link below to learn how to add to, or modify, the repository."
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/CriminalJustice-Datasheets/CriminalJustice-Datasheets.github.io"
+  bio: "A collection of criminal justice datasets and datasheets."
 
 footer:
   links:
@@ -80,7 +76,7 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: true
+      author_profile: false
       read_time: false
       comments: false
       share: false
@@ -91,7 +87,7 @@ defaults:
       type: pages
     values:
       layout: single
-      author_profile: true
+      author_profile: false
 
 category_archive:
   type: liquid
